@@ -1,0 +1,12 @@
+C:\GENTIL\SisHackNews\src\Infra\bin\Debug\netcoreapp2.2\Infra.deps.json
+C:\GENTIL\SisHackNews\src\Infra\bin\Debug\netcoreapp2.2\Infra.dll
+C:\GENTIL\SisHackNews\src\Infra\bin\Debug\netcoreapp2.2\Infra.pdb
+C:\GENTIL\SisHackNews\src\Infra\bin\Debug\netcoreapp2.2\Application.dll
+C:\GENTIL\SisHackNews\src\Infra\bin\Debug\netcoreapp2.2\Application.pdb
+C:\GENTIL\SisHackNews\src\Infra\obj\Debug\netcoreapp2.2\Infra.csprojAssemblyReference.cache
+C:\GENTIL\SisHackNews\src\Infra\obj\Debug\netcoreapp2.2\Infra.csproj.CoreCompileInputs.cache
+C:\GENTIL\SisHackNews\src\Infra\obj\Debug\netcoreapp2.2\Infra.AssemblyInfoInputs.cache
+C:\GENTIL\SisHackNews\src\Infra\obj\Debug\netcoreapp2.2\Infra.AssemblyInfo.cs
+C:\GENTIL\SisHackNews\src\Infra\obj\Debug\netcoreapp2.2\Infra.csproj.CopyComplete
+C:\GENTIL\SisHackNews\src\Infra\obj\Debug\netcoreapp2.2\Infra.dll
+C:\GENTIL\SisHackNews\src\Infra\obj\Debug\netcoreapp2.2\Infra.pdb

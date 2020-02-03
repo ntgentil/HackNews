@@ -1,0 +1,117 @@
+﻿@model Application.ViewModel.NoticiaViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+
+<div class="row">
+    <div class="col-lg-12 col-md-12 mx-auto">
+        <div class="post-preview">
+
+            <h2 class="post-title">
+                @Html.DisplayFor(modelItem => Model.Titulo)
+            </h2>
+
+            <h4 class="post-subtitle mt-3">
+                @Html.DisplayFor(modelItem => Model.SubTitulo)
+            </h4>
+
+            <p class="mt-5 mb-3">
+                @Html.DisplayFor(modelItem => Model.Corpo)
+            </p>
+
+            <p class="post-meta">
+                <strong>Postado por</strong>
+                <a href="#">@Html.DisplayFor(modelItem => Model.Autor)</a><br />
+                <strong>Publicado em </strong>@Html.DisplayFor(modelItem => Model.DataPublicacao)
+            </p>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="card">
+    <div class="card-body" style="background:#f9f9f9;">
+        <div class="row">
+            <div class="container">
+                <form asp-action="Comentar">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    @Html.HiddenFor(m => m.NoticiaId)
+                    <div class="row">
+                        <div class="col mb-3">
+                            <label asp-for="Comentario.Autor" class="control-label"></label>
+                            <input asp-for="Comentario.Autor" class="form-control" />
+                            <span asp-validation-for="Comentario.Autor" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col mb-3">
+                            <label asp-for="Comentario.Titulo" class="control-label"></label>
+                            <input asp-for="Comentario.Titulo" class="form-control" />
+                            <span asp-validation-for="Comentario.Titulo" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        
+                        <div class="col mb-3">
+                            <label asp-for="Comentario.Mensagem" class="control-label"></label>
+                            <textarea asp-for="Comentario.Mensagem" class="form-control"></textarea>
+                            <span asp-validation-for="Comentario.Mensagem" class="text-danger"></span>
+                            <span class="caracteres">255</span> Caracteres restantes
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <input type="submit" value="Comentar" class="btn btn-primary" />
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="py-2">
+    <h2>Comentários</h2>
+</div>
+
+@if (Model.Comentarios.Count > 0)
+{
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="container">
+                    @foreach (var item in Model.Comentarios)
+                    {
+                        <div class="media mb-4">
+                            <div class="media-body">
+                                <h5 class="mt-0">@item.Autor</h5>
+                                @item.Mensagem
+                                <p class="mt-1"><strong>Data Publicação:</strong> @item.DataCadastro</p>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    <script type="text/javascript">
+        $(document).on("keydown", "#Comentario_Mensagem", function () {
+            var caracteresRestantes = 200;
+            var caracteresDigitados = parseInt($(this).val().length);
+            var caracteresRestantes = caracteresRestantes - caracteresDigitados;
+
+            $(".caracteres").text(caracteresRestantes);
+        });
+
+    </script>
+}

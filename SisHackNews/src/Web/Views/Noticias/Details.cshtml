@@ -1,0 +1,108 @@
+﻿@model Application.Model.Noticia
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<div class="py-2">
+    <h2>Cadatro de Notícia</h2>
+</div>
+
+<div class="card">
+    <div class="card-body" style="background:#f9f9f9;">
+        <div class="row">
+            <div class="container">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="row">
+                        <div class="col mb-3">
+                            <label asp-for="Titulo" class="control-label"></label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col mb-3">
+                            <label asp-for="SubTitulo" class="control-label"></label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col mb-3">
+                            <label asp-for="Corpo" class="control-label"></label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <div class="row">
+                                <div class="col-6">
+                                    <label asp-for="Autor" class="control-label"></label>
+                                    <input asp-for="Autor" class="form-control" />
+                                </div>
+                                <div class="col-6">
+                                    <label asp-for="DataPublicacao" class="control-label"></label>
+                                    <input asp-for="DataPublicacao" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                           
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+@*<h1>Details</h1>
+
+<div>
+    <h4>Noticia</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Autor)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Autor)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Titulo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Titulo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SubTitulo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SubTitulo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Corpo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Corpo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DataCadastro)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DataCadastro)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DataPublicacao)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DataPublicacao)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.NoticiaId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>*@

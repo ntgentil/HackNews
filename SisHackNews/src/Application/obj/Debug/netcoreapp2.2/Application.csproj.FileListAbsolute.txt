@@ -1,0 +1,9 @@
+C:\GENTIL\SisHackNews\src\Application\bin\Debug\netcoreapp2.2\Application.deps.json
+C:\GENTIL\SisHackNews\src\Application\bin\Debug\netcoreapp2.2\Application.dll
+C:\GENTIL\SisHackNews\src\Application\bin\Debug\netcoreapp2.2\Application.pdb
+C:\GENTIL\SisHackNews\src\Application\obj\Debug\netcoreapp2.2\Application.csproj.CoreCompileInputs.cache
+C:\GENTIL\SisHackNews\src\Application\obj\Debug\netcoreapp2.2\Application.AssemblyInfoInputs.cache
+C:\GENTIL\SisHackNews\src\Application\obj\Debug\netcoreapp2.2\Application.AssemblyInfo.cs
+C:\GENTIL\SisHackNews\src\Application\obj\Debug\netcoreapp2.2\Application.dll
+C:\GENTIL\SisHackNews\src\Application\obj\Debug\netcoreapp2.2\Application.pdb
+C:\GENTIL\SisHackNews\src\Application\obj\Debug\netcoreapp2.2\Application.csprojAssemblyReference.cache

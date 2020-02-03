@@ -1,0 +1,91 @@
+﻿@model PaginatedList<Application.Model.Noticia>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Notícias</h1>
+
+<hr />
+<div class="row mb-4 d-flex flex-row-reverse">
+    <div class="col-6">
+        <p class="d-flex flex-row-reverse">
+            <a asp-action="Create" class="btn btn-dark">Adicionar Notícia</a>
+        </p>
+    </div>
+    <div class="col-6">
+        <form asp-action="Index" method="get">
+            <div class="form-actions no-color">
+                <div class="input-group">
+                    <input type="text" name="pesquisar" value="@ViewData["CurrentFilter"]" class="form-control" placeholder="Pesquisar por Titulo">
+                    <div class="input-group-append">
+                        <button class="btn btn-dark" type="submit">
+                            PESQUISAR
+                        </button>
+                    </div>
+                </div>
+
+
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Autor
+            </th>
+            <th>
+                Titulo
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-ordem="@ViewData["OrdemDataCadastro"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Data Cadastro</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-ordem="@ViewData["OrdemDataPublicacao"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Data Publicação</a>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Autor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Titulo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataCadastro)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataPublicacao)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@{
+    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+}
+
+<a asp-action="Index"
+   asp-route-ordem="@ViewData["CurrentSort"]"
+   asp-route-pageNumber="@(Model.PageIndex - 1)"
+   asp-route-currentFilter="@ViewData["PesquisarFiltro"]"
+   class="btn btn-dark @prevDisabled">
+    Previous
+</a>
+<a asp-action="Index"
+   asp-route-ordem="@ViewData["CurrentSort"]"
+   asp-route-pageNumber="@(Model.PageIndex + 1)"
+   asp-route-currentFilter="@ViewData["PesquisarFiltro"]"
+   class="btn btn-dark @nextDisabled">
+    Next
+</a>
